@@ -15,7 +15,15 @@
   -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
+  <!-- jquery for ALERTMSG -->
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
   <!-- 
+    ==font awsome
+   -->
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+   <!-- 
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -45,10 +53,22 @@
 
       <div class="navbar-actions">
 
-        <select name="language" id="lang">
+        <!-- <select name="language" id="lang">
           <option value="en">En</option>
           <option value="ar">ML</option>
-        </select>
+        </select> -->
+
+        
+        <!-- <div id="google_element"></div>
+        <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        <script>
+          function loadGoogleTranslate(){
+            new google.translate.TranslateElement (
+              "google_element")
+          }
+        </script> -->
+
+
 
         <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
           <span class="icon"></span>
@@ -56,17 +76,17 @@
 
       </div>
 
-      <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
+      <button class="nav-toggle-btn #toggle-btn2" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
         <span class="one"></span>
         <span class="two"></span>
         <span class="three"></span>
       </button>
 
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
+      <nav class="navbar" id="menu" data-navbar >
+        <ul class="navbar-list" id="menu">
 
           <li>
-            <a href="#home" class="navbar-link">Home.</a>
+            <a href="#home" class="navbar-link" id="home-nav" onclick="click()">Home.</a>
           </li>
 
           <li>
@@ -78,7 +98,7 @@
           </li>
 
           <li>
-            <a href="#portfolio" class="navbar-link">Portfolio.</a>
+            <a href="#portfolio" class="navbar-link">Projects.</a>
           </li>
 
           <li>
@@ -88,11 +108,49 @@
         </ul>
       </nav>
 
+
+      <!-- #sidebar test -->
+      <div id="toggle"></div>
+    <div id="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
+
+    <script>
+        // #hamburger btn
+        // ==================
+        const toggle = document.getElementById('toggle');
+        const sidebar = document.getElementById('sidebar');
+
+
+        document.onclick = function(e){
+        if(e.target.id !== 'sidebar' && e.target.id !== 'toggle')
+        {
+            toggle.classList.remove('active');
+            sidebar.classList.remove('active')
+        }
+        }
+
+        toggle.onclick = function(){
+            toggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+      <!-- sidebar test end
+      ====================== -->
+
+
+    </div>
+    
   </header>
 
 
-
+      
 
 
   <main>
@@ -124,7 +182,7 @@
 
         </div>
 
-        <ul class="hero-social-list">
+        <!-- <ul class="hero-social-list">
 
           <li>
             <a href="#" class="hero-social-link">
@@ -134,13 +192,13 @@
             </a>
           </li>
 
-          <!-- <li>
+          <li>
             <a href="#" class="hero-social-link">
               <ion-icon name="logo-twitter"></ion-icon>
 
               <div class="tooltip">Twitter</div>
             </a>
-          </li> -->
+          </li>
 
           <li>
             <a href="#" class="hero-social-link">
@@ -150,7 +208,7 @@
             </a>
           </li>
 
-        </ul>
+        </ul> -->
 
         <a href="#stats" class="scroll-down">Scroll</a>
 
@@ -178,13 +236,13 @@
                 2+ <strong>Months of Experience</strong>
               </h2>
 
-              <ion-icon name="chevron-forward-outline"></ion-icon>
+              <!-- <ion-icon name="chevron-forward-outline"></ion-icon> -->
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="stats-card">
+            <a href="" class="stats-card">
 
               <div class="card-icon">
                 <img src="assets/images/stats-card_icon-2.png" alt="Checkmark icon">
@@ -194,13 +252,13 @@
                 6+ <strong>Completed Projects</strong>
               </h2>
 
-              <ion-icon name="chevron-forward-outline"></ion-icon>
+              <!-- <ion-icon name="chevron-forward-outline"></ion-icon> -->
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="stats-card">
+            <a href="" class="stats-card">
 
               <div class="card-icon">
                 <img src="assets/images/stats-card_icon-3.png" alt="Peoples rating icon">
@@ -210,7 +268,7 @@
                 1+ <strong>Happy Clients</strong>
               </h2>
 
-              <ion-icon name="chevron-forward-outline"></ion-icon>
+              <!-- <ion-icon name="chevron-forward-outline"></ion-icon> -->
 
             </a>
           </li>
@@ -249,9 +307,9 @@
           </p>
 
           <div class="btn-group">
-            <button class="btn btn-secondary">Hire me</button>
+            <a href="#contact"><button class="btn btn-secondary">Hire me</button></a>
 
-            <button class="btn btn-primary">Download cv</button>
+           <a href="CV/MUHAMMED SAFVAN.KV_CV_2023..pdf " download> <button class="btn btn-primary">Download cv</button></a>
           </div>
 
         </div>
@@ -267,7 +325,7 @@
       -->
 
       <section class="skills" id="skills">
-
+`
         <div class="skills-content section-content">
 
           <p class="section-subtitle">My skills</p>
@@ -324,7 +382,7 @@
 
             <li>
               <div class="skill-card">
-                <div class="tooltip">TypeScript</div>
+                <div class="tooltip">gitHub</div>
 
                 <div class="card-icon">
                   <i class="fa-brands fa-github fa-2xl" style="color: #000000;"></i>            </li>
@@ -684,9 +742,18 @@
             </a>
           </li>
 
-          <li>
+          <!--#alert-msg -->
+          <div class="alert hide">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg">Alert: Wait for my new works!</span>
+            <span class="close-btn">
+                <span class="fas fa-times"></span>
+            </span>
+          </div>
+
+          <!-- <li>
             <button class="load-more">Load more work</button>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -724,7 +791,8 @@
                 <h3 class="h4 contact-item-title">Address:</h3>
 
                 <address class="contact-info">
-                 Mavoor RD, Kerala, India
+                  <a href="https://goo.gl/maps/p76DH5CtEUkHuVLeA" target="_blank"> Mavoor RD, Kerala, India</a>
+               
                 </address>
               </div>
 
@@ -739,7 +807,7 @@
               <div class="wrapper">
                 <h3 class="h4 contact-item-title">Phone:</h3>
 
-                <a href="tel:01234567789" class="contact-info">+91 7034359330</a>
+                <a href="tel:+91 7034359330" class="contact-info">+91 7034359330</a>
 
                 <!-- <a href="tel:09765432200" class="contact-info">(09) 765 432 200</a> -->
               </div>
@@ -766,7 +834,7 @@
               <ul class="contac-social-list">
 
                 <li>
-                  <a href="#" class="contact-social-link">
+                  <a href="https://www.facebook.com/muhammed.safvan.3386585" target="_blank" class="contact-social-link">
                     <div class="tooltip">Facebook</div>
 
                     <ion-icon name="logo-facebook"></ion-icon>
@@ -782,7 +850,7 @@
                 </li> -->
 
                 <li>
-                  <a href="#" class="contact-social-link">
+                  <a href="https://www.linkedin.com/feed/" target="_blank" class="contact-social-link">
                     <div class="tooltip">Linkedin</div>
 
                     <ion-icon name="logo-linkedin"></ion-icon>
@@ -790,10 +858,11 @@
                 </li>
 
                 <li>
-                  <a href="#" class="contact-social-link">
-                    <div class="tooltip">Youtube</div>
+                  <a href="https://www.instagram.com/m_safvan_kv/" target="_blank" class="contact-social-link">
+                    <div class="tooltip">Instagram</div>
 
-                    <ion-icon name="logo-youtube"></ion-icon>
+                    <!-- <ion-icon name="logo-youtube"></ion-icon> -->
+                    <ion-icon name="logo-instagram"></ion-icon>
                   </a>
                 </li>
 
@@ -814,7 +883,7 @@
 
             <div class="input-wrapper">
 
-              <input type="text" name="name" required id="name" onkeyup="validation" required placeholder="e.g John " class="input-field">
+              <input type="text" required name="name" id="name" onkeyup="validation"  placeholder="e.g John " class="input-field">
 
               <ion-icon name="person-circle"></ion-icon>
 
@@ -824,11 +893,11 @@
 
           <div class="form-wrapper">
 
-            <label for="email" class="form-label">Email</label>
+            <label for="email"  class="form-label">Email</label>
 
             <div class="input-wrapper">
 
-              <input type="email" name="email" id="email" required placeholder="e.g johndoe@mail.com"
+              <input type="email" required name="email" id="email" placeholder="e.g johndoe@mail.com"
                 class="input-field">
 
               <ion-icon name="mail"></ion-icon>
@@ -843,7 +912,7 @@
 
             <div class="input-wrapper">
 
-              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field" >
+              <input type="number" maxlength="11" required name="phone" id="phone"  placeholder="Phone Number" class="input-field" >
 
               <ion-icon name="call"></ion-icon>
 
@@ -857,7 +926,7 @@
 
             <div class="input-wrapper">
 
-              <textarea name="message" id="message" required placeholder="Write message..."
+              <textarea name="message" id="message" placeholder="Write message..."
                 class="input-field"></textarea>
 
               <ion-icon name="chatbubbles"></ion-icon>
@@ -866,7 +935,7 @@
 
           </div>
 
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" onclick="return validateform()" id="button" class="btn btn-primary">Send</button>
 
         </form>
 
@@ -888,12 +957,12 @@
 
       <p class="h1 logo">
         <a href="#">
-          Jack<span>.</span>
+          Safvan<span>.</span>
         </a>
       </p>
 
       <p class="copyright">
-        &copy; 2022 <a href="#">codewithsadee</a>. All rights reserved
+        &copy; 2023 <a href="#">true-filia</a>. All rights reserved
       </p>
 
     </div>
@@ -927,7 +996,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-  <!-- form submissio sccript
+  <!-- form submission sccript
   ============================= -->
   <script>
     $("#submit-form").submit((e)=>{
@@ -951,7 +1020,7 @@
  
 <!-- form validation
 ============================ -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
   function validation(){
 
@@ -969,8 +1038,20 @@
    
   }
 
-</script>
+</script> -->
 
+
+<!-- #alert-msg script -->
+<!-- <script>
+  $('button').click(function(){
+    $('.alert').removeClass("hide")
+    $('.alert').addClass("show")
+  });
+  $('.close-btn').click(function(){
+    $('.alert').addClass("hide")
+    $('.alert').removeClass("show")
+  });
+</script> -->
 
 </body>
 

@@ -36,11 +36,16 @@ window.addEventListener("scroll", function () {
 const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
 const navbar = document.querySelector("[data-navbar]");
 
+
+
+
+
 navToggleBtn.addEventListener("click", function () {
 
   elemToggleFunc(navToggleBtn);
   elemToggleFunc(navbar);
   elemToggleFunc(document.body);
+  elemToggleFunc(navbar-link);
 
 });
 
@@ -102,4 +107,43 @@ if (localStorage.getItem("theme") === "light_theme") {
   themeToggleBtn.classList.remove("active");
   document.body.classList.remove("light_theme");
   document.body.classList.add("dark_theme");
+}
+
+
+// 
+// var a =document.getElementById("home-nav");
+// var b=document.getElementsByClassName("navbar");
+// function myfunc(){
+// b.style.display="none";
+// }
+
+
+// const toggleBtn = document.querySelector('#toggle-btn2');
+// const menu = document.querySelector('#menu');
+
+// // Close menu when menu item is clicked
+// menu.addEventListener('click', () => {
+//   menu.classList.remove('show');
+// });
+
+// // Toggle menu on button click
+// toggleBtn.addEventListener('click', () => {
+//   menu.classList.toggle('show');
+// });
+
+// form validation
+// ==================
+
+
+
+
+function validateform(){
+  var name=document.getElementById("name").value;
+  if(name.trim()==""){
+    alert("name can't be a null value");
+    return false;
+  }
+  else{
+    return true;
+  }
 }
